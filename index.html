@@ -772,9 +772,11 @@
               <span id="basketTotal">£0.00</span>
             </div>
             <div class="basket-form">
-              <!-- Formspree action — replace XXXX with your form ID -->
-              <form id="colForm" action="https://formspree.io/f/mrewkpvj" method="POST" onsubmit="submitOrder(event)">
-                <input type="hidden" name="_subject" value="🔥 New Collection Order — Big Mama's Grill">
+              <!-- Web3Forms integration -->
+              <form id="colForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="submitOrder(event)">
+                <input type="hidden" name="access_key" value="63e4bfb4-3de3-4358-91fc-50f0d3ef3a9c">
+                <input type="hidden" name="subject" value="🔥 New Collection Order — Big Mama's Grill">
+                <input type="hidden" name="from_name" value="Big Mama's Grill Website">
                 <input type="hidden" name="order_summary" id="hiddenOrder">
                 <input type="hidden" name="collection_slot" id="hiddenSlot">
                 <input type="hidden" name="order_total" id="hiddenTotal">

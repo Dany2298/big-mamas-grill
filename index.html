@@ -307,7 +307,70 @@
   .foot-links{display:flex;gap:26px;font-size:14px;font-weight:600;color:var(--text-dim);flex-wrap:wrap;}
   .foot-links a:hover{color:var(--orange-light);}
   .foot-bottom{margin-top:36px;padding-top:24px;border-top:1px solid rgba(245,236,217,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:var(--text-dim);}
-
+  /* ---------------- COLLECTION BOOKING ---------------- */
+  .collection{background:var(--charcoal);border-top:1px solid rgba(245,236,217,.06);border-bottom:1px solid rgba(245,236,217,.06);}
+  .closed-notice{background:var(--brown);border:1px solid var(--brown-light);border-radius:var(--radius);padding:40px;text-align:center;max-width:520px;margin:0 auto;}
+  .closed-notice .closed-icon{font-size:42px;margin-bottom:14px;}
+  .closed-notice h3{font-size:clamp(22px,3vw,28px);margin-bottom:10px;}
+  .closed-notice p{color:var(--text-dim);font-size:15px;line-height:1.6;margin:0;}
+  .col-grid{display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start;}
+  @media(max-width:960px){.col-grid{grid-template-columns:1fr;}}
+  .slot-label{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-dim);margin:0 0 12px;}
+  .slot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:28px;}
+  @media(max-width:480px){.slot-grid{grid-template-columns:repeat(3,1fr);}}
+  .slot{border:1px solid rgba(245,236,217,.15);border-radius:10px;padding:11px 4px;text-align:center;font-size:13px;font-weight:600;color:var(--text-dim);cursor:pointer;background:var(--brown);transition:border-color .15s,color .15s,background .15s;user-select:none;}
+  .slot:hover:not(.slot-closed){border-color:var(--orange);color:var(--orange-light);}
+  .slot.slot-selected{background:linear-gradient(135deg,var(--orange),var(--red));border-color:transparent;color:#fff;}
+  .slot.slot-closed{opacity:.3;cursor:not-allowed;pointer-events:none;}
+  .slot-next{font-size:9px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;background:rgba(255,255,255,.22);border-radius:3px;padding:1px 5px;margin-left:3px;vertical-align:middle;}
+  .col-section{margin-bottom:18px;}
+  .col-section-head{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--brown);border:1px solid var(--brown-light);border-radius:10px 10px 0 0;font-weight:700;font-size:13px;}
+  .col-section-badge{font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(255,107,0,.15);color:var(--orange-light);}
+  .cook-toggle{display:flex;gap:6px;margin-left:auto;}
+  .cook-btn{font-size:12px;font-weight:700;padding:5px 12px;border-radius:100px;border:1px solid rgba(245,236,217,.2);color:var(--text-dim);background:transparent;cursor:pointer;transition:all .15s;}
+  .cook-btn.active{background:var(--ink);border-color:var(--orange);color:var(--orange-light);}
+  .col-items{border:1px solid var(--brown-light);border-top:none;border-radius:0 0 10px 10px;overflow:hidden;}
+  .col-item{display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid rgba(245,236,217,.06);background:var(--ink);}
+  .col-item:last-of-type{border-bottom:none;}
+  .col-item-info{flex:1;}
+  .col-item-name{font-size:14px;font-weight:600;}
+  .col-item-price{font-size:13px;color:var(--orange-light);margin-top:2px;}
+  .col-item-sub{font-size:12px;color:var(--text-dim);margin-top:2px;}
+  .qty-ctrl{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .qty-btn{width:30px;height:30px;border-radius:50%;border:1px solid rgba(245,236,217,.2);background:var(--brown);color:var(--text);font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:400;transition:border-color .15s,color .15s;}
+  .qty-btn:hover{border-color:var(--orange);color:var(--orange-light);}
+  .qty-num{font-size:15px;font-weight:700;min-width:18px;text-align:center;}
+  .sub-opts{padding:12px 16px 14px;background:rgba(255,107,0,.04);border-bottom:1px solid rgba(245,236,217,.06);border-top:1px solid rgba(255,107,0,.1);display:none;}
+  .sub-opts.show{display:block;}
+  .sub-opts-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--orange-light);margin-bottom:8px;}
+  .sub-chips{display:flex;flex-wrap:wrap;gap:7px;}
+  .sub-chip{font-size:12px;font-weight:600;padding:6px 13px;border-radius:100px;border:1px solid rgba(245,236,217,.18);color:var(--text-dim);cursor:pointer;background:var(--brown);transition:all .15s;}
+  .sub-chip.chosen{background:var(--orange);border-color:var(--orange);color:#fff;}
+  .basket-panel{position:sticky;top:90px;background:var(--brown);border:1px solid var(--brown-light);border-radius:var(--radius);overflow:hidden;}
+  .basket-head{padding:18px 20px;border-bottom:1px solid rgba(245,236,217,.08);}
+  .basket-head h3{font-size:18px;margin-bottom:4px;}
+  .basket-head p{font-size:13px;color:var(--text-dim);margin:0;}
+  .basket-body{padding:16px 20px;min-height:70px;}
+  .basket-empty{color:var(--text-dim);font-size:14px;text-align:center;padding:16px 0;}
+  .basket-line{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;font-size:14px;margin-bottom:10px;}
+  .basket-line:last-child{margin-bottom:0;}
+  .basket-line-name{flex:1;line-height:1.4;}
+  .basket-line-sub{font-size:12px;color:var(--text-dim);margin-top:2px;}
+  .basket-line-price{font-weight:700;color:var(--orange-light);white-space:nowrap;}
+  .basket-total{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-top:1px solid rgba(245,236,217,.08);font-size:15px;font-weight:700;}
+  .basket-total span:last-child{font-size:20px;color:var(--orange-light);}
+  .basket-form{padding:16px 20px;border-top:1px solid rgba(245,236,217,.08);display:flex;flex-direction:column;gap:10px;}
+  .col-input{width:100%;background:var(--ink);border:1px solid rgba(245,236,217,.15);border-radius:10px;padding:12px 14px;font-size:14px;color:var(--text);outline:none;transition:border-color .15s;box-sizing:border-box;}
+  .col-input:focus{border-color:var(--orange);}
+  .col-input::placeholder{color:var(--text-dim);}
+  .col-submit{width:100%;padding:15px;border-radius:100px;border:none;background:linear-gradient(135deg,var(--orange),var(--red));color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:opacity .15s,transform .15s;}
+  .col-submit:hover:not(:disabled){opacity:.9;transform:translateY(-1px);}
+  .col-submit:disabled{opacity:.4;cursor:not-allowed;}
+  .col-note{font-size:12px;color:var(--text-dim);text-align:center;line-height:1.5;}
+  .order-success{display:none;text-align:center;padding:40px 20px;}
+  .order-success .s-icon{font-size:52px;margin-bottom:16px;}
+  .order-success h3{font-size:22px;margin-bottom:10px;}
+  .order-success p{color:var(--text-dim);font-size:15px;line-height:1.6;margin:0 0 20px;}
 
 </style>
 </head>
@@ -319,6 +382,7 @@
     <div class="nav-links">
       <a href="#menu">Menu</a>
       <a href="#order">Order Online</a>
+      <a href="#collection">Collection</a>
       <a href="#reviews">Reviews</a>
       <a href="#visit">Visit</a>
     </div>
@@ -333,6 +397,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#menu">Menu</a>
     <a href="#order">Order Online</a>
+    <a href="#collection">Collection</a>
     <a href="#reviews">Reviews</a>
     <a href="#visit">Visit</a>
     <a href="#visit" class="btn btn-outline btn-block" style="margin-top:6px;">Get Directions</a>
@@ -510,12 +575,226 @@
         </div>
         <div class="order-card reveal">
           <div class="order-icon icon-pk">★</div>
-          <span class="pill pill-soon">Coming soon</span>
+          <span class="pill pill-live">Book direct — free</span>
           <h3>Book a collection slot</h3>
-          <p>Reserve a pickup time straight from this site — landing here soon. For now, order ahead via Uber Eats or Just Eat and collect in store.</p>
-          <a class="btn btn-dark btn-block" href="#visit">See store hours</a>
+          <p>Choose your time, pick your items, and we'll have it ready. Pay on collection — no app needed.</p>
+          <a class="btn btn-primary btn-block" href="#collection">Book a slot</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- COLLECTION BOOKING -->
+  <section class="collection" id="collection">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Book a Collection Slot</div>
+        <h2>Order &amp; collect</h2>
+        <p>Pick a time, choose your food, and we'll have it ready and waiting. Pay on collection.</p>
+      </div>
+
+      <!-- Closed notice — shown by JS when outside hours -->
+      <div class="closed-notice" id="closedNotice" style="display:none;">
+        <div class="closed-icon">🔒</div>
+        <h3 id="closedTitle">We're currently closed</h3>
+        <p id="closedMsg">We're open Tuesday – Sunday, 12pm – 10pm. Pop back during opening hours to place a collection order.</p>
+      </div>
+
+      <!-- Order form — shown when open -->
+      <div id="orderForm">
+        <div class="col-grid">
+          <div class="col-left">
+
+            <!-- SLOTS -->
+            <div class="slot-label">Choose a collection time</div>
+            <div class="slot-grid" id="slotGrid"></div>
+
+            <!-- WINGS -->
+            <div class="col-section">
+              <div class="col-section-head">
+                <span>Saucy wings</span>
+                <span class="col-section-badge">Fried or grilled</span>
+                <div class="cook-toggle">
+                  <button class="cook-btn active" onclick="setCook('Fried',this)">Fried</button>
+                  <button class="cook-btn" onclick="setCook('Grilled',this)">Grilled</button>
+                </div>
+              </div>
+              <div class="col-items">
+                <div class="col-item">
+                  <div class="col-item-info">
+                    <div class="col-item-name">8 wings</div>
+                    <div class="col-item-price" id="p-w8">£7.49</div>
+                  </div>
+                  <div class="qty-ctrl">
+                    <button class="qty-btn" onclick="changeQty('w8',-1)">−</button>
+                    <div class="qty-num" id="q-w8">0</div>
+                    <button class="qty-btn" onclick="changeQty('w8',1)">+</button>
+                  </div>
+                </div>
+                <div class="sub-opts" id="sub-w8">
+                  <div class="sub-opts-label">Choose 1 flavour</div>
+                  <div class="sub-chips" data-group="w8">
+                    <span class="sub-chip" onclick="pickSub(this)">Mango heat</span>
+                    <span class="sub-chip" onclick="pickSub(this)">Pineapple heat</span>
+                    <span class="sub-chip" onclick="pickSub(this)">Barbe-fried</span>
+                    <span class="sub-chip" onclick="pickSub(this)">Sweet chilli</span>
+                  </div>
+                </div>
+                <div class="col-item">
+                  <div class="col-item-info">
+                    <div class="col-item-name">10 wings</div>
+                    <div class="col-item-price" id="p-w10">£9.49</div>
+                  </div>
+                  <div class="qty-ctrl">
+                    <button class="qty-btn" onclick="changeQty('w10',-1)">−</button>
+                    <div class="qty-num" id="q-w10">0</div>
+                    <button class="qty-btn" onclick="changeQty('w10',1)">+</button>
+                  </div>
+                </div>
+                <div class="sub-opts" id="sub-w10">
+                  <div class="sub-opts-label">Choose 1 flavour</div>
+                  <div class="sub-chips" data-group="w10">
+                    <span class="sub-chip" onclick="pickSub(this)">Mango heat</span>
+                    <span class="sub-chip" onclick="pickSub(this)">Pineapple heat</span>
+                    <span class="sub-chip" onclick="pickSub(this)">Barbe-fried</span>
+                    <span class="sub-chip" onclick="pickSub(this)">Sweet chilli</span>
+                  </div>
+                </div>
+                <div class="col-item">
+                  <div class="col-item-info">
+                    <div class="col-item-name">12 wings</div>
+                    <div class="col-item-price" id="p-w12">£10.49</div>
+                  </div>
+                  <div class="qty-ctrl">
+                    <button class="qty-btn" onclick="changeQty('w12',-1)">−</button>
+                    <div class="qty-num" id="q-w12">0</div>
+                    <button class="qty-btn" onclick="changeQty('w12',1)">+</button>
+                  </div>
+                </div>
+                <div class="sub-opts" id="sub-w12">
+                  <div class="sub-opts-label">Choose 1 flavour</div>
+                  <div class="sub-chips" data-group="w12">
+                    <span class="sub-chip" onclick="pickSub(this)">Mango heat</span>
+                    <span class="sub-chip" onclick="pickSub(this)">Pineapple heat</span>
+                    <span class="sub-chip" onclick="pickSub(this)">Barbe-fried</span>
+                    <span class="sub-chip" onclick="pickSub(this)">Sweet chilli</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- GRILL CLASSICS -->
+            <div class="col-section">
+              <div class="col-section-head"><span>Grill house classics</span><span class="col-section-badge">Served with sides</span></div>
+              <div class="col-items">
+                <div class="col-item">
+                  <div class="col-item-info">
+                    <div class="col-item-name">Chicken meal</div>
+                    <div class="col-item-price">£9.99</div>
+                    <div class="col-item-sub">With salad, mac &amp; cheese, coleslaw, ripe plantain</div>
+                  </div>
+                  <div class="qty-ctrl">
+                    <button class="qty-btn" onclick="changeQty('cm',-1)">−</button>
+                    <div class="qty-num" id="q-cm">0</div>
+                    <button class="qty-btn" onclick="changeQty('cm',1)">+</button>
+                  </div>
+                </div>
+                <div class="sub-opts" id="sub-cm">
+                  <div class="sub-opts-label">Choose style</div>
+                  <div class="sub-chips" data-group="cm">
+                    <span class="sub-chip" onclick="pickSub(this)">Jerk spiced</span>
+                    <span class="sub-chip" onclick="pickSub(this)">Fried</span>
+                  </div>
+                </div>
+                <div class="col-item">
+                  <div class="col-item-info"><div class="col-item-name">Jerk spiced lamb</div><div class="col-item-price">£12.99</div></div>
+                  <div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('jl',-1)">−</button><div class="qty-num" id="q-jl">0</div><button class="qty-btn" onclick="changeQty('jl',1)">+</button></div>
+                </div>
+                <div class="col-item">
+                  <div class="col-item-info"><div class="col-item-name">Jerk spiced prawns</div><div class="col-item-price">£12.99</div></div>
+                  <div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('jp',-1)">−</button><div class="qty-num" id="q-jp">0</div><button class="qty-btn" onclick="changeQty('jp',1)">+</button></div>
+                </div>
+                <div class="col-item">
+                  <div class="col-item-info"><div class="col-item-name">Fried escovitch fish</div><div class="col-item-price">£12.99</div></div>
+                  <div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('ef',-1)">−</button><div class="qty-num" id="q-ef">0</div><button class="qty-btn" onclick="changeQty('ef',1)">+</button></div>
+                </div>
+                <div class="col-item">
+                  <div class="col-item-info"><div class="col-item-name">Vegan fried chicken</div><div class="col-item-price">£10.99</div></div>
+                  <div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('vc',-1)">−</button><div class="qty-num" id="q-vc">0</div><button class="qty-btn" onclick="changeQty('vc',1)">+</button></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- FRIED CHICKEN -->
+            <div class="col-section">
+              <div class="col-section-head"><span>Big Mama's fried chicken</span><span class="col-section-badge">Served with seasoned fries</span></div>
+              <div class="col-items">
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">2 pieces</div><div class="col-item-price">£5.49</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('fc2',-1)">−</button><div class="qty-num" id="q-fc2">0</div><button class="qty-btn" onclick="changeQty('fc2',1)">+</button></div></div>
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">3 pieces</div><div class="col-item-price">£7.49</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('fc3',-1)">−</button><div class="qty-num" id="q-fc3">0</div><button class="qty-btn" onclick="changeQty('fc3',1)">+</button></div></div>
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">4 pieces</div><div class="col-item-price">£9.49</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('fc4',-1)">−</button><div class="qty-num" id="q-fc4">0</div><button class="qty-btn" onclick="changeQty('fc4',1)">+</button></div></div>
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">6-piece bucket</div><div class="col-item-price">£12.99</div><div class="col-item-sub">With fries + 2 sides</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('bk6',-1)">−</button><div class="qty-num" id="q-bk6">0</div><button class="qty-btn" onclick="changeQty('bk6',1)">+</button></div></div>
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">10-piece bucket</div><div class="col-item-price">£19.99</div><div class="col-item-sub">With fries + 2 sides</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('bk10',-1)">−</button><div class="qty-num" id="q-bk10">0</div><button class="qty-btn" onclick="changeQty('bk10',1)">+</button></div></div>
+              </div>
+            </div>
+
+            <!-- WAFFLES, WRAPS & BURGERS -->
+            <div class="col-section">
+              <div class="col-section-head"><span>Waffles, wraps &amp; burgers</span><span class="col-section-badge">All with chips &amp; spiced punch</span></div>
+              <div class="col-items">
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">Waffles</div><div class="col-item-price">£8.99</div><div class="col-item-sub">Choose from jerk spice, fried boneless, wings or crispy fish</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('wf',-1)">−</button><div class="qty-num" id="q-wf">0</div><button class="qty-btn" onclick="changeQty('wf',1)">+</button></div></div>
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">Jerk spice wrap meal</div><div class="col-item-price">£10.99</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('wr',-1)">−</button><div class="qty-num" id="q-wr">0</div><button class="qty-btn" onclick="changeQty('wr',1)">+</button></div></div>
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">Jerk spice burger meal</div><div class="col-item-price">£10.99</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('jb',-1)">−</button><div class="qty-num" id="q-jb">0</div><button class="qty-btn" onclick="changeQty('jb',1)">+</button></div></div>
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">Fried chicken burger meal</div><div class="col-item-price">£10.99</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('fb',-1)">−</button><div class="qty-num" id="q-fb">0</div><button class="qty-btn" onclick="changeQty('fb',1)">+</button></div></div>
+              </div>
+            </div>
+
+            <!-- SIDES -->
+            <div class="col-section">
+              <div class="col-section-head"><span>Sides &amp; extras</span></div>
+              <div class="col-items">
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">Nugget dumplings</div><div class="col-item-price">£1.80</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('nd',-1)">−</button><div class="qty-num" id="q-nd">0</div><button class="qty-btn" onclick="changeQty('nd',1)">+</button></div></div>
+              </div>
+            </div>
+
+          </div><!-- /col-left -->
+
+          <!-- BASKET PANEL -->
+          <div class="basket-panel">
+            <div class="basket-head">
+              <h3>Your order</h3>
+              <p id="basketSlotLabel">No slot selected yet</p>
+            </div>
+            <div class="basket-body" id="basketBody">
+              <div class="basket-empty">Add items to get started</div>
+            </div>
+            <div class="basket-total">
+              <span>Total</span>
+              <span id="basketTotal">£0.00</span>
+            </div>
+            <div class="basket-form">
+              <!-- Formspree action — replace XXXX with your form ID -->
+              <form id="colForm" action="https://formspree.io/f/mrewkpvj" method="POST" onsubmit="submitOrder(event)">
+                <input type="hidden" name="_subject" value="🔥 New Collection Order — Big Mama's Grill">
+                <input type="hidden" name="order_summary" id="hiddenOrder">
+                <input type="hidden" name="collection_slot" id="hiddenSlot">
+                <input type="hidden" name="order_total" id="hiddenTotal">
+                <input class="col-input" type="text" name="customer_name" placeholder="Your name" required style="margin-bottom:10px;">
+                <input class="col-input" type="tel" name="customer_phone" placeholder="Phone number" required style="margin-bottom:10px;">
+                <textarea class="col-input" name="notes" placeholder="Any notes or allergies? (optional)" rows="2" style="resize:none;margin-bottom:10px;"></textarea>
+                <button class="col-submit" type="submit" id="submitBtn" disabled>Add items to order</button>
+              </form>
+              <p class="col-note">Pay on collection · We'll have it ready for your slot · Halal certified</p>
+            </div>
+            <div class="order-success" id="orderSuccess">
+              <div class="s-icon">✅</div>
+              <h3>Order placed!</h3>
+              <p>Thanks! We'll have your order ready for <strong id="successSlot"></strong>. See you soon.</p>
+              <a href="#collection" class="btn btn-outline btn-sm" onclick="resetOrder()">Place another order</a>
+            </div>
+          </div>
+
+        </div><!-- /col-grid -->
+      </div><!-- /orderForm -->
     </div>
   </section>
 
@@ -623,11 +902,11 @@
 <a href="#order" class="float-cta">🔥 Order Now</a>
 
 <script>
-  // duplicate marquee content for seamless loop
+  // ---- MARQUEE ----
   const mq = document.getElementById('marquee');
   mq.innerHTML += mq.innerHTML;
 
-  // mobile menu toggle
+  // ---- MOBILE MENU ----
   const burgerBtn = document.getElementById('burgerBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   burgerBtn.addEventListener('click', () => {
@@ -640,6 +919,249 @@
       burgerBtn.setAttribute('aria-expanded', 'false');
     });
   });
+
+  // ---- COLLECTION BOOKING ----
+  // Opening: Tue-Sun (days 2-0, where 0=Sun,1=Mon..6=Sat), 12:00-21:30 last order (closes 22:00)
+  const OPEN_DAYS = [0,2,3,4,5,6]; // Sun, Tue, Wed, Thu, Fri, Sat
+  const OPEN_HOUR = 12;
+  const LAST_ORDER_HOUR = 21;
+  const LAST_ORDER_MIN = 30;
+  const SLOT_MINS = 30; // slot every 30 minutes
+
+  const MENU = {
+    w8:  { name:'8 wings (fried)',    priceFried:7.49,  priceGrilled:8.49,  hasWingSub:true },
+    w10: { name:'10 wings (fried)',   priceFried:9.49,  priceGrilled:10.49, hasWingSub:true },
+    w12: { name:'12 wings (fried)',   priceFried:10.49, priceGrilled:11.49, hasWingSub:true },
+    cm:  { name:'Chicken meal',       price:9.99,  hasSub:true },
+    jl:  { name:'Jerk spiced lamb',   price:12.99 },
+    jp:  { name:'Jerk spiced prawns', price:12.99 },
+    ef:  { name:'Fried escovitch fish',price:12.99 },
+    vc:  { name:'Vegan fried chicken',price:10.99 },
+    fc2: { name:'Fried chicken — 2 pieces', price:5.49 },
+    fc3: { name:'Fried chicken — 3 pieces', price:7.49 },
+    fc4: { name:'Fried chicken — 4 pieces', price:9.49 },
+    bk6: { name:'6-piece bucket',     price:12.99 },
+    bk10:{ name:'10-piece bucket',    price:19.99 },
+    wf:  { name:'Waffles',            price:8.99 },
+    wr:  { name:'Jerk spice wrap meal',price:10.99 },
+    jb:  { name:'Jerk spice burger meal',price:10.99 },
+    fb:  { name:'Fried chicken burger meal',price:10.99 },
+    nd:  { name:'Nugget dumplings',   price:1.80 },
+  };
+
+  let cookStyle = 'Fried';
+  let selectedSlot = null;
+  let quantities = {};
+  let flavours = {};
+
+  Object.keys(MENU).forEach(k => { quantities[k] = 0; flavours[k] = ''; });
+
+  function isOpen() {
+    const now = new Date();
+    const day = now.getDay();
+    const h = now.getHours();
+    const m = now.getMinutes();
+    if (!OPEN_DAYS.includes(day)) return false;
+    if (h < OPEN_HOUR) return false;
+    if (h > LAST_ORDER_HOUR) return false;
+    if (h === LAST_ORDER_HOUR && m > LAST_ORDER_MIN) return false;
+    return true;
+  }
+
+  function buildSlots() {
+    const grid = document.getElementById('slotGrid');
+    grid.innerHTML = '';
+    const now = new Date();
+    const nowMins = now.getHours() * 60 + now.getMinutes();
+    // Start at 12:00, end at 21:30
+    const startMins = OPEN_HOUR * 60;
+    const endMins = LAST_ORDER_HOUR * 60 + LAST_ORDER_MIN;
+    let firstAvail = true;
+
+    for (let t = startMins; t <= endMins; t += SLOT_MINS) {
+      const h = Math.floor(t / 60);
+      const m = t % 60;
+      const label = `${h}:${m === 0 ? '00' : m}`;
+      const isPast = t <= nowMins + 14; // need at least 15 mins lead time
+      const div = document.createElement('div');
+      div.className = 'slot' + (isPast ? ' slot-closed' : '');
+      div.dataset.time = label;
+      if (!isPast && firstAvail) {
+        div.className += ' slot-selected';
+        div.innerHTML = label + '<span class="slot-next">next</span>';
+        selectedSlot = label;
+        firstAvail = false;
+      } else {
+        div.textContent = label;
+      }
+      if (!isPast) {
+        div.onclick = () => {
+          document.querySelectorAll('.slot').forEach(s => {
+            s.classList.remove('slot-selected');
+            s.querySelector('.slot-next') && (s.innerHTML = s.dataset.time);
+          });
+          div.classList.add('slot-selected');
+          selectedSlot = label;
+          updateBasket();
+        };
+      }
+      grid.appendChild(div);
+    }
+    updateBasket();
+  }
+
+  function initPage() {
+    const open = isOpen();
+    document.getElementById('closedNotice').style.display = open ? 'none' : 'block';
+    document.getElementById('orderForm').style.display = open ? 'block' : 'none';
+    if (!open) {
+      const now = new Date();
+      const day = now.getDay();
+      if (day === 1) {
+        document.getElementById('closedTitle').textContent = "We're closed today (Monday)";
+        document.getElementById('closedMsg').textContent = "We're closed every Monday. We'll be open again from Tuesday at 12pm — see you then!";
+      } else if (now.getHours() < OPEN_HOUR) {
+        document.getElementById('closedTitle').textContent = "Not open yet";
+        document.getElementById('closedMsg').textContent = "We open at 12pm today. Come back then to place your collection order.";
+      } else {
+        document.getElementById('closedTitle').textContent = "Last orders have passed";
+        document.getElementById('closedMsg').textContent = "We stop taking collection orders at 9:30pm. We're open Tuesday – Sunday from 12pm — see you soon!";
+      }
+    } else {
+      buildSlots();
+    }
+  }
+
+  function setCook(style, btn) {
+    cookStyle = style;
+    document.querySelectorAll('.cook-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const grilled = style === 'Grilled';
+    ['w8','w10','w12'].forEach(k => {
+      const item = MENU[k];
+      const priceEl = document.getElementById('p-' + k);
+      if (priceEl) priceEl.textContent = '£' + (grilled ? item.priceGrilled : item.priceFried).toFixed(2);
+    });
+    // update menu item names to reflect cook style
+    updateBasket();
+  }
+
+  function changeQty(key, delta) {
+    quantities[key] = Math.max(0, (quantities[key] || 0) + delta);
+    const el = document.getElementById('q-' + key);
+    if (el) el.textContent = quantities[key];
+    // show/hide sub options
+    const subEl = document.getElementById('sub-' + key);
+    if (subEl) {
+      const show = quantities[key] > 0;
+      subEl.classList.toggle('show', show);
+      if (!show) { flavours[key] = ''; subEl.querySelectorAll('.sub-chip').forEach(c => c.classList.remove('chosen')); }
+    }
+    updateBasket();
+  }
+
+  function pickSub(el) {
+    const group = el.closest('.sub-chips').dataset.group;
+    el.closest('.sub-chips').querySelectorAll('.sub-chip').forEach(c => c.classList.remove('chosen'));
+    el.classList.add('chosen');
+    flavours[group] = el.textContent;
+    updateBasket();
+  }
+
+  function getPrice(key) {
+    const item = MENU[key];
+    if (item.hasWingSub) return cookStyle === 'Grilled' ? item.priceGrilled : item.priceFried;
+    return item.price;
+  }
+
+  function getDisplayName(key) {
+    const item = MENU[key];
+    if (item.hasWingSub) return item.name.replace('(fried)', '(' + cookStyle.toLowerCase() + ')');
+    return item.name;
+  }
+
+  function updateBasket() {
+    const body = document.getElementById('basketBody');
+    const totalEl = document.getElementById('basketTotal');
+    const slotLabel = document.getElementById('basketSlotLabel');
+    const submitBtn = document.getElementById('submitBtn');
+
+    slotLabel.textContent = selectedSlot ? 'Collect at ' + selectedSlot : 'No slot selected';
+
+    let lines = [];
+    let total = 0;
+    Object.keys(quantities).forEach(key => {
+      const qty = quantities[key];
+      if (qty < 1) return;
+      const price = getPrice(key);
+      const lineTotal = qty * price;
+      total += lineTotal;
+      lines.push({ key, qty, name: getDisplayName(key), flavour: flavours[key] || '', lineTotal });
+    });
+
+    if (lines.length === 0) {
+      body.innerHTML = '<div class="basket-empty">Add items to get started</div>';
+    } else {
+      body.innerHTML = lines.map(l => `
+        <div class="basket-line">
+          <div class="basket-line-name">
+            ${l.qty > 1 ? l.qty + '× ' : ''}${l.name}
+            ${l.flavour ? '<div class="basket-line-sub">' + l.flavour + '</div>' : ''}
+          </div>
+          <div class="basket-line-price">£${l.lineTotal.toFixed(2)}</div>
+        </div>`).join('');
+    }
+
+    totalEl.textContent = '£' + total.toFixed(2);
+
+    const canSubmit = lines.length > 0 && selectedSlot;
+    submitBtn.disabled = !canSubmit;
+    submitBtn.textContent = canSubmit ? 'Place collection order' : (lines.length === 0 ? 'Add items to order' : 'Select a time slot');
+
+    // Populate hidden fields
+    document.getElementById('hiddenSlot').value = selectedSlot || '';
+    document.getElementById('hiddenTotal').value = '£' + total.toFixed(2);
+    document.getElementById('hiddenOrder').value = lines.map(l =>
+      l.qty + 'x ' + l.name + (l.flavour ? ' [' + l.flavour + ']' : '') + ' — £' + l.lineTotal.toFixed(2)
+    ).join('\n');
+  }
+
+  async function submitOrder(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    const form = document.getElementById('colForm');
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, { method:'POST', body:data, headers:{'Accept':'application/json'} });
+      if (res.ok) {
+        document.getElementById('successSlot').textContent = selectedSlot;
+        form.closest('.basket-form').style.display = 'none';
+        document.getElementById('orderSuccess').style.display = 'block';
+      } else {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Something went wrong — try again';
+      btn.disabled = false;
+    }
+  }
+
+  function resetOrder() {
+    Object.keys(quantities).forEach(k => { quantities[k] = 0; });
+    Object.keys(flavours).forEach(k => { flavours[k] = ''; });
+    document.querySelectorAll('.qty-num').forEach(el => el.textContent = '0');
+    document.querySelectorAll('.sub-opts').forEach(el => el.classList.remove('show'));
+    document.querySelectorAll('.sub-chip').forEach(el => el.classList.remove('chosen'));
+    document.getElementById('colForm').reset();
+    document.getElementById('orderSuccess').style.display = 'none';
+    document.querySelector('.basket-form').style.display = 'block';
+    buildSlots();
+  }
+
+  initPage();
 </script>
 
 </body>

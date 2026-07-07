@@ -1090,10 +1090,12 @@
               <!-- Web3Forms integration -->
               <div class="val-summary" id="valSummary" role="alert" aria-live="polite"></div>
               <form id="colForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="submitOrder(event)" novalidate>
-                <input type="hidden" name="access_key" value="8dcc3695-69f6-44c9-b03e-a34964498ee3">
+                <!-- hCaptcha widget — Web3Forms handles verification automatically once hCaptcha is selected as the Captcha Protection option in your dashboard settings -->
+                <div class="h-captcha" data-captcha="true"></div>
+                <input type="hidden" name="access_key" value="63e4bfb4-3de3-4358-91fc-50f0d3ef3a9c">
                 <input type="hidden" name="subject" value="🔥 New Collection Order — Big Mama's Grill">
                 <input type="hidden" name="from_name" value="Big Mama's Grill Website">
-                <input type="hidden" name="to" value="Bigmamasgrillltd@gmail.com">
+                <!-- <input type="hidden" name="to" value="Bigmamasgrillltd@gmail.com"> -->
                 <input type="hidden" name="order_summary" id="hiddenOrder">
                 <input type="hidden" name="collection_slot" id="hiddenSlot">
                 <input type="hidden" name="order_total" id="hiddenTotal">
@@ -1775,5 +1777,6 @@
   initPage();
 </script>
 
+<script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>

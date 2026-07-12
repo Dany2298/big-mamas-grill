@@ -428,6 +428,7 @@
   .val-summary ul{margin:6px 0 0 16px;padding:0;}
   .val-summary ul li{margin-bottom:3px;}
   .col-input.input-error{border-color:rgba(210,40,40,.7)!important;background:rgba(210,40,40,.07)!important;}
+  #fieldRefundAck.input-error{outline:2px solid rgba(210,40,40,.7);outline-offset:2px;border-radius:3px;}
   .sub-opts.sub-error{border:1px solid rgba(210,40,40,.5);border-radius:8px;padding:8px 10px;background:rgba(210,40,40,.07);}
   .sub-err-msg{display:none;font-size:12px;color:#ff8080;margin-top:5px;font-style:italic;}
   .sub-opts.sub-error .sub-err-msg{display:block;}
@@ -856,7 +857,7 @@
           <div class="order-icon icon-pk">★</div>
           <span class="pill pill-live">Book direct — free</span>
           <h3>Book a collection slot</h3>
-          <p>Choose your time, pick your items, and we'll have it ready. Pay on collection — no app needed.</p>
+          <p>Choose your time, pick your items, and pay online to confirm — no app needed.</p>
           <a class="btn btn-primary btn-block" href="#collection">Book a slot</a>
         </div>
       </div>
@@ -869,7 +870,7 @@
       <div class="section-head">
         <div class="eyebrow">Book a Collection Slot</div>
         <h2>Order &amp; collect</h2>
-        <p>Pick a time, choose your food, and we'll have it ready and waiting. Pay on collection.</p>
+        <p>Pick a time, choose your food, and pay online to confirm your order.</p>
       </div>
 
       <!-- Closed notice — shown by JS when outside hours -->
@@ -893,18 +894,20 @@
               <div class="col-section-head">
                 <span>Saucy wings</span>
                 <span class="col-section-badge">Fried or grilled</span>
-                <div class="cook-toggle">
-                  <button class="cook-btn active" onclick="setCook('Fried',this)">Fried</button>
-                  <button class="cook-btn" onclick="setCook('Grilled',this)">Grilled</button>
-                </div>
               </div>
               <div class="col-items">
-                <div class="col-item"><div class="col-item-info"><div class="col-item-name">8 wings</div><div class="col-item-price" id="p-w8">£7.49</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('w8',-1)">−</button><div class="qty-num" id="q-w8">0</div><button class="qty-btn" onclick="changeQty('w8',1)">+</button></div></div>
-                <div class="sub-opts" id="sub-w8"><div class="sub-opts-label">Choose up to 2 flavours</div><div class="sub-chips" data-group="w8" data-max="2"><span class="sub-chip" onclick="pickSub(this)">BBQ</span><span class="sub-chip" onclick="pickSub(this)">Mango heat</span><span class="sub-chip" onclick="pickSub(this)">Pineapple heat</span><span class="sub-chip" onclick="pickSub(this)">Sweet chilli</span></div></div>
-                <div class="col-item"><div class="col-item-info"><div class="col-item-name">10 wings</div><div class="col-item-price" id="p-w10">£9.49</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('w10',-1)">−</button><div class="qty-num" id="q-w10">0</div><button class="qty-btn" onclick="changeQty('w10',1)">+</button></div></div>
-                <div class="sub-opts" id="sub-w10"><div class="sub-opts-label">Choose up to 2 flavours</div><div class="sub-chips" data-group="w10" data-max="2"><span class="sub-chip" onclick="pickSub(this)">BBQ</span><span class="sub-chip" onclick="pickSub(this)">Mango heat</span><span class="sub-chip" onclick="pickSub(this)">Pineapple heat</span><span class="sub-chip" onclick="pickSub(this)">Sweet chilli</span></div></div>
-                <div class="col-item"><div class="col-item-info"><div class="col-item-name">12 wings</div><div class="col-item-price" id="p-w12">£10.49</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('w12',-1)">−</button><div class="qty-num" id="q-w12">0</div><button class="qty-btn" onclick="changeQty('w12',1)">+</button></div></div>
-                <div class="sub-opts" id="sub-w12"><div class="sub-opts-label">Choose up to 2 flavours</div><div class="sub-chips" data-group="w12" data-max="2"><span class="sub-chip" onclick="pickSub(this)">BBQ</span><span class="sub-chip" onclick="pickSub(this)">Mango heat</span><span class="sub-chip" onclick="pickSub(this)">Pineapple heat</span><span class="sub-chip" onclick="pickSub(this)">Sweet chilli</span></div></div>
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">8 wings (fried)</div><div class="col-item-price">£7.49</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('w8f',-1)">−</button><div class="qty-num" id="q-w8f">0</div><button class="qty-btn" onclick="changeQty('w8f',1)">+</button></div></div>
+                <div class="sub-opts" id="sub-w8f"><div class="sub-opts-label">Choose up to 2 flavours</div><div class="sub-chips" data-group="w8f" data-max="2"><span class="sub-chip" onclick="pickSub(this)">BBQ</span><span class="sub-chip" onclick="pickSub(this)">Mango heat</span><span class="sub-chip" onclick="pickSub(this)">Pineapple heat</span><span class="sub-chip" onclick="pickSub(this)">Sweet chilli</span></div></div>
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">8 wings (grilled)</div><div class="col-item-price">£9.49</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('w8g',-1)">−</button><div class="qty-num" id="q-w8g">0</div><button class="qty-btn" onclick="changeQty('w8g',1)">+</button></div></div>
+                <div class="sub-opts" id="sub-w8g"><div class="sub-opts-label">Choose up to 2 flavours</div><div class="sub-chips" data-group="w8g" data-max="2"><span class="sub-chip" onclick="pickSub(this)">BBQ</span><span class="sub-chip" onclick="pickSub(this)">Mango heat</span><span class="sub-chip" onclick="pickSub(this)">Pineapple heat</span><span class="sub-chip" onclick="pickSub(this)">Sweet chilli</span></div></div>
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">10 wings (fried)</div><div class="col-item-price">£9.49</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('w10f',-1)">−</button><div class="qty-num" id="q-w10f">0</div><button class="qty-btn" onclick="changeQty('w10f',1)">+</button></div></div>
+                <div class="sub-opts" id="sub-w10f"><div class="sub-opts-label">Choose up to 2 flavours</div><div class="sub-chips" data-group="w10f" data-max="2"><span class="sub-chip" onclick="pickSub(this)">BBQ</span><span class="sub-chip" onclick="pickSub(this)">Mango heat</span><span class="sub-chip" onclick="pickSub(this)">Pineapple heat</span><span class="sub-chip" onclick="pickSub(this)">Sweet chilli</span></div></div>
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">10 wings (grilled)</div><div class="col-item-price">£11.49</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('w10g',-1)">−</button><div class="qty-num" id="q-w10g">0</div><button class="qty-btn" onclick="changeQty('w10g',1)">+</button></div></div>
+                <div class="sub-opts" id="sub-w10g"><div class="sub-opts-label">Choose up to 2 flavours</div><div class="sub-chips" data-group="w10g" data-max="2"><span class="sub-chip" onclick="pickSub(this)">BBQ</span><span class="sub-chip" onclick="pickSub(this)">Mango heat</span><span class="sub-chip" onclick="pickSub(this)">Pineapple heat</span><span class="sub-chip" onclick="pickSub(this)">Sweet chilli</span></div></div>
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">12 wings (fried)</div><div class="col-item-price">£10.49</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('w12f',-1)">−</button><div class="qty-num" id="q-w12f">0</div><button class="qty-btn" onclick="changeQty('w12f',1)">+</button></div></div>
+                <div class="sub-opts" id="sub-w12f"><div class="sub-opts-label">Choose up to 2 flavours</div><div class="sub-chips" data-group="w12f" data-max="2"><span class="sub-chip" onclick="pickSub(this)">BBQ</span><span class="sub-chip" onclick="pickSub(this)">Mango heat</span><span class="sub-chip" onclick="pickSub(this)">Pineapple heat</span><span class="sub-chip" onclick="pickSub(this)">Sweet chilli</span></div></div>
+                <div class="col-item"><div class="col-item-info"><div class="col-item-name">12 wings (grilled)</div><div class="col-item-price">£12.49</div></div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty('w12g',-1)">−</button><div class="qty-num" id="q-w12g">0</div><button class="qty-btn" onclick="changeQty('w12g',1)">+</button></div></div>
+                <div class="sub-opts" id="sub-w12g"><div class="sub-opts-label">Choose up to 2 flavours</div><div class="sub-chips" data-group="w12g" data-max="2"><span class="sub-chip" onclick="pickSub(this)">BBQ</span><span class="sub-chip" onclick="pickSub(this)">Mango heat</span><span class="sub-chip" onclick="pickSub(this)">Pineapple heat</span><span class="sub-chip" onclick="pickSub(this)">Sweet chilli</span></div></div>
               </div>
             </div>
 
@@ -1087,11 +1090,9 @@
               <span id="basketTotal">£0.00</span>
             </div>
             <div class="basket-form">
-              <!-- Web3Forms integration -->
+              <!-- Order is only emailed via Web3Forms after Stripe payment succeeds — see handlePaymentReturn() -->
               <div class="val-summary" id="valSummary" role="alert" aria-live="polite"></div>
-              <form id="colForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="submitOrder(event)" novalidate>
-                <!-- hCaptcha widget — Web3Forms handles verification automatically once hCaptcha is selected as the Captcha Protection option in your dashboard settings -->
-                <div class="h-captcha" data-captcha="true"></div>
+              <form id="colForm" onsubmit="submitOrder(event)" novalidate>
                 <input type="hidden" name="access_key" value="63e4bfb4-3de3-4358-91fc-50f0d3ef3a9c">
                 <input type="hidden" name="subject" value="🔥 New Collection Order — Big Mama's Grill">
                 <input type="hidden" name="from_name" value="Big Mama's Grill Website">
@@ -1103,10 +1104,16 @@
                 <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
                 <input class="col-input" id="fieldName" type="text" name="customer_name" placeholder="Your name" autocomplete="name" style="margin-bottom:10px;" oninput="this.classList.remove('input-error')">
                 <input class="col-input" id="fieldPhone" type="tel" name="customer_phone" placeholder="Phone number (e.g. 07700 900123)" autocomplete="tel" style="margin-bottom:10px;" oninput="this.classList.remove('input-error')">
+                <input class="col-input" id="fieldEmail" type="email" name="customer_email" placeholder="Email address" autocomplete="email" style="margin-bottom:10px;" oninput="this.classList.remove('input-error')">
                 <textarea class="col-input" name="notes" placeholder="Any notes or allergies? (optional)" rows="2" style="resize:none;margin-bottom:10px;"></textarea>
+                <p class="col-refund-notice" style="font-size:13px;color:var(--orange);margin:2px 0 10px;">Payment is taken in full when you place your order. <strong>No refunds</strong> — please check your order and collection time before paying.</p>
+                <label style="display:flex;align-items:flex-start;gap:8px;margin-bottom:14px;font-size:13px;color:var(--cream);cursor:pointer;">
+                  <input type="checkbox" id="fieldRefundAck" style="margin-top:3px;" oninput="this.classList.remove('input-error')">
+                  <span>I understand this order is paid in full now and is <strong>non-refundable</strong>.</span>
+                </label>
                 <button class="col-submit" type="submit" id="submitBtn" disabled>Add items to order</button>
               </form>
-              <p class="col-note">Pay on collection · We'll have it ready for your slot · Halal certified</p>
+              <p class="col-note">Pay online to confirm · We'll have it ready for your slot · Halal certified</p>
             </div>
             <div class="order-success" id="orderSuccess">
               <div class="s-icon">✅</div>
@@ -1334,9 +1341,12 @@
   const SLOT_MINS = 30; // slot every 30 minutes
 
   const MENU = {
-    w8:       { name:'8 wings (fried)',             priceFried:7.49,  priceGrilled:9.49,  hasWingSub:true },
-    w10:      { name:'10 wings (fried)',            priceFried:9.49,  priceGrilled:11.49, hasWingSub:true },
-    w12:      { name:'12 wings (fried)',            priceFried:10.49, priceGrilled:12.49, hasWingSub:true },
+    w8f:      { name:'8 wings (fried)',              price:7.49 },
+    w8g:      { name:'8 wings (grilled)',             price:9.49 },
+    w10f:     { name:'10 wings (fried)',              price:9.49 },
+    w10g:     { name:'10 wings (grilled)',            price:11.49 },
+    w12f:     { name:'12 wings (fried)',              price:10.49 },
+    w12g:     { name:'12 wings (grilled)',            price:12.49 },
     cm:       { name:'Jerk spiced chicken',         price:14.00, subGroups:['cm-chicken','cm-style','cm-glaze','cm-meal'] },
     jl:       { name:'Jerk spiced lamb',            price:15.50, subGroups:['jl-glaze','jl-meal'] },
     jp:       { name:'Jerk spiced prawns',          price:14.99, subGroups:['jp-glaze','jp-meal'] },
@@ -1376,7 +1386,10 @@
     scake:    { name:'Sprinkle cake & custard',     price:4.95 },
   };
 
-  let cookStyle = 'Fried';
+  // Where the backend lives — it holds the real menu prices and talks to
+  // Stripe and Resend directly, so nothing sensitive lives in this file.
+  const BACKEND_URL = 'https://bigmamas-backend.bigmamasgrillltd.workers.dev';
+
   let selectedSlot = null;
   let quantities = {};
   let subSelections = {};
@@ -1384,7 +1397,7 @@
   Object.keys(MENU).forEach(k => { quantities[k] = 0; });
 
   const ALL_SUB_GROUPS = [
-    'w8','w10','w12',
+    'w8f','w8g','w10f','w10g','w12f','w12g',
     'cm-chicken','cm-style','cm-glaze','cm-meal',
     'jl-glaze','jl-meal','jp-glaze','jp-meal',
     'ef-glaze','ef-meal','vc-option',
@@ -1473,20 +1486,6 @@
     }
   }
 
-  function setCook(style, btn) {
-    cookStyle = style;
-    document.querySelectorAll('.cook-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const grilled = style === 'Grilled';
-    ['w8','w10','w12'].forEach(k => {
-      const item = MENU[k];
-      const priceEl = document.getElementById('p-' + k);
-      if (priceEl) priceEl.textContent = '£' + (grilled ? item.priceGrilled : item.priceFried).toFixed(2);
-    });
-    // update menu item names to reflect cook style
-    updateBasket();
-  }
-
   function changeQty(key, delta) {
     quantities[key] = Math.max(0, (quantities[key] || 0) + delta);
     const el = document.getElementById('q-' + key);
@@ -1550,22 +1549,18 @@
   }
 
   function getPrice(key) {
-    const item = MENU[key];
-    if (item.hasWingSub) return cookStyle === 'Grilled' ? item.priceGrilled : item.priceFried;
-    return item.price;
+    return MENU[key].price;
   }
 
   function getDisplayName(key) {
-    const item = MENU[key];
-    if (item.hasWingSub) return item.name.replace('(fried)', '(' + cookStyle.toLowerCase() + ')');
-    return item.name;
+    return MENU[key].name;
   }
 
   function getSubSummary(key) {
     const item = MENU[key];
     let parts = [];
-    // wings use group = key itself
-    if (item.hasWingSub) {
+    // some items (e.g. wings) use a flavour-chip group named after the item's own key
+    if (subSelections.hasOwnProperty(key) && !item.subGroups) {
       const sel = subSelections[key] || [];
       if (sel.length) parts.push(sel.join(' + '));
     }
@@ -1615,7 +1610,7 @@
 
     const canSubmit = lines.length > 0 && selectedSlot;
     submitBtn.disabled = !canSubmit;
-    submitBtn.textContent = canSubmit ? 'Place collection order' : (lines.length === 0 ? 'Add items to order' : 'Select a time slot');
+    submitBtn.textContent = canSubmit ? 'Pay & confirm order' : (lines.length === 0 ? 'Add items to order' : 'Select a time slot');
 
     // Populate hidden fields
     document.getElementById('hiddenSlot').value = selectedSlot || '';
@@ -1632,6 +1627,8 @@
     summary.classList.remove('show');
     summary.innerHTML = '';
     document.querySelectorAll('.col-input.input-error').forEach(el => el.classList.remove('input-error'));
+    const refundAckEl = document.getElementById('fieldRefundAck');
+    if (refundAckEl) refundAckEl.classList.remove('input-error');
     document.querySelectorAll('.sub-opts.sub-error').forEach(el => {
       el.classList.remove('sub-error');
       const msg = el.querySelector('.sub-err-msg');
@@ -1710,6 +1707,21 @@
       errors.push({ type: 'field', fieldId: 'fieldPhone', msg: 'Please enter a valid UK phone number (e.g. 07700 900123).' });
     }
 
+    // 6. Email — required so we can send an order confirmation
+    const emailVal = document.getElementById('fieldEmail').value.trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+    if (!emailVal) {
+      errors.push({ type: 'field', fieldId: 'fieldEmail', msg: 'Please enter your email address.' });
+    } else if (!emailOk) {
+      errors.push({ type: 'field', fieldId: 'fieldEmail', msg: 'Please enter a valid email address.' });
+    }
+
+    // 7. Must acknowledge the no-refunds policy before paying
+    const refundAck = document.getElementById('fieldRefundAck');
+    if (refundAck && !refundAck.checked) {
+      errors.push({ type: 'field', fieldId: 'fieldRefundAck', msg: 'Please confirm you understand this order is non-refundable.' });
+    }
+
     return errors;
   }
 
@@ -1734,31 +1746,95 @@
       return;
     }
 
+    // Build the cart as a simple list of (key, quantity) — the backend looks
+    // up the real prices itself, so no price data ever needs to leave this page.
+    const items = [];
+    Object.keys(quantities).forEach(key => {
+      if (quantities[key] > 0) {
+        items.push({ key: key, quantity: quantities[key] });
+      }
+    });
+
+    if (items.length === 0) {
+      document.getElementById('valSummary').innerHTML = 'Please add at least one item to your order.';
+      document.getElementById('valSummary').classList.add('show');
+      return;
+    }
+
     const btn = document.getElementById('submitBtn');
-    btn.textContent = 'Sending…';
+    btn.textContent = 'Redirecting to payment…';
     btn.disabled = true;
 
     const form = document.getElementById('colForm');
-    const data = new FormData(form);
+
+    const orderPayload = {
+      items: items,
+      customer_name: document.getElementById('fieldName').value.trim(),
+      customer_phone: document.getElementById('fieldPhone').value.trim(),
+      customer_email: document.getElementById('fieldEmail').value.trim(),
+      notes: form.querySelector('[name="notes"]').value.trim(),
+      collection_slot: selectedSlot,
+      order_summary: document.getElementById('hiddenOrder').value,
+      order_total: document.getElementById('hiddenTotal').value
+    };
 
     try {
-      const res = await fetch(form.action, { method:'POST', body:data, headers:{'Accept':'application/json'} });
-      if (res.ok) {
-        lastSubmitTime = Date.now();
-        document.getElementById('successSlot').textContent = selectedSlot;
-        form.closest('.basket-form').style.display = 'none';
-        document.getElementById('orderSuccess').style.display = 'block';
-      } else {
-        btn.textContent = 'Place collection order';
+      const res = await fetch(BACKEND_URL + '/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(orderPayload)
+      });
+      const data = await res.json();
+
+      if (!res.ok || !data.url) {
+        btn.textContent = 'Pay & confirm order';
         btn.disabled = false;
-        document.getElementById('valSummary').innerHTML = 'Something went wrong sending your order. Please try again or call us directly.';
+        document.getElementById('valSummary').innerHTML = data.error || 'Something went wrong starting payment. Please try again.';
         document.getElementById('valSummary').classList.add('show');
+        return;
       }
-    } catch {
-      btn.textContent = 'Place collection order';
+
+      lastSubmitTime = Date.now();
+      window.location.href = data.url;
+    } catch (err) {
+      btn.textContent = 'Pay & confirm order';
       btn.disabled = false;
-      document.getElementById('valSummary').innerHTML = 'Network error — please check your connection and try again.';
+      document.getElementById('valSummary').innerHTML = 'Something went wrong starting payment. Please try again or call us directly.';
       document.getElementById('valSummary').classList.add('show');
+    }
+  }
+
+  // Runs on every page load. The restaurant is notified by the backend
+  // directly (triggered by Stripe itself, the instant payment succeeds) —
+  // this function's only job now is showing the customer the right message.
+  function handlePaymentReturn() {
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get('payment');
+    if (!status) return;
+
+    // Clean the URL so refreshing this page never re-shows old messages
+    history.replaceState(null, '', window.location.origin + window.location.pathname + '#collection');
+
+    if (status === 'success') {
+      document.getElementById('closedNotice').style.display = 'none';
+      document.getElementById('orderForm').style.display = 'block';
+      document.getElementById('successSlot').textContent = selectedSlot || '';
+      document.querySelector('.basket-form').style.display = 'none';
+      document.getElementById('orderSuccess').style.display = 'block';
+
+      // Clear the basket state now the order is placed, without re-showing the form.
+      Object.keys(quantities).forEach(k => { quantities[k] = 0; });
+      document.querySelectorAll('.qty-num').forEach(el => el.textContent = '0');
+      document.querySelectorAll('.sub-opts').forEach(el => el.classList.remove('show'));
+      document.querySelectorAll('.sub-chip').forEach(el => el.classList.remove('chosen'));
+      document.getElementById('colForm').reset();
+      updateBasket();
+
+      document.getElementById('collection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (status === 'cancelled') {
+      document.getElementById('valSummary').innerHTML = "Payment was cancelled — your order hasn't been placed or charged. You can try again below.";
+      document.getElementById('valSummary').classList.add('show');
+      document.getElementById('collection').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
@@ -1775,8 +1851,8 @@
   }
 
   initPage();
+  handlePaymentReturn();
 </script>
 
-<script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>

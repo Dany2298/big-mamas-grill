@@ -2138,7 +2138,7 @@
       document.getElementById('colForm').reset();
       updateBasket();
 
-      document.getElementById('collection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('orderSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else if (status === 'cancelled') {
       document.getElementById('valSummary').innerHTML = "Payment was cancelled — your order hasn't been placed or charged. You can try again below.";
       document.getElementById('valSummary').classList.add('show');

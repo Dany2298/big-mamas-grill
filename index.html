@@ -1728,11 +1728,11 @@
               sectionEl.innerHTML = `
                 <div class="col-section-head">
                   <span id="colSecLabel${si}"></span>
-                  <span class="col-section-badge" id="colSecBadge${si}"></span>
+                  ${sec.badge ? `<span class="col-section-badge" id="colSecBadge${si}"></span>` : ''}
                 </div>
                 <div class="col-items"></div>`;
               sectionEl.querySelector('#colSecLabel' + si).textContent = sec.label || '';
-              sectionEl.querySelector('#colSecBadge' + si).textContent = sec.badge || '';
+              if (sec.badge) sectionEl.querySelector('#colSecBadge' + si).textContent = sec.badge;
               colLeft.appendChild(sectionEl);
             }
             if (!sectionEl) return;
